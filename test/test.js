@@ -8,11 +8,15 @@ describe('calcTax', function(){
   })
   it('should tax 7% on the second $10', function(){
     expect(code.calcTax(15)).to.equal(1.35);
+    expect(code.calcTax(17)).to.equal(1.49);
+    expect(code.calcTax(10.01)).to.equal(1.0007);
   })
   it('should tax 5% on the third $10', function(){
     expect(code.calcTax(25)).to.equal(1.95);
+    expect(code.calcTax(30)).to.equal(2.2);
   })
   it('should tax 3% on everything after the third $10', function(){
     expect(code.calcTax(35)).to.equal(2.35);
+    expect(code.calcTax(48)).to.equal(2.74);
   })
 });
